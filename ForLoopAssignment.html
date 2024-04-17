@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. Write a for loop to calculate the sum of numbers from 1 to 100.
+        var sum = 0;
+        for (var i = 0; i <= 100; i++) {
+            sum = sum + i;
+        }
+        console.log('The sum of 1 to 100 numbers' + ' ' + sum);   //The sum of 1 to 100 numbers 5050
+
+        //2. Use a for...of loop to iterate through an array of numbers [5, 10, 15] and multiply each number by 2, then print each result.//
+        var numbers = [5, 10, 15];
+        var mul = [];
+        for (var number of numbers) {
+            var result = number * 2;
+            mul.push(result);
+            console.log('The result of ' + number + ' multiplied by 2 is ' + result);
+        }
+        console.log('The multiplication of  array is: ' + mul);    //The multiplication of  array is: 10,20,30
+
+        //3. Use a for...in loop to print all values of the object {a: 1, b: 2, c: 3}
+        var obj = {
+            a: 1,
+            b: 2,
+            c: 3
+        }
+        for (var val in obj) {
+            console.log(obj[val]);      // 1 2 3
+        }
+
+        //4. Write a for loop that counts how many even numbers there are from 1 to 50.
+        var count = 0;
+        for (var i = 1; i <= 50; i++) {
+            if (i % 2 == 0) {
+                count += 1;
+            }
+        }
+        console.log('even numbers there are from 1 to 50:' + ' ' + count);  //even numbers there are from 1 to 50 25
+
+        //5.  Use a for...of loop to concatenate all strings in the array ["Hello", "world", "!"]
+        var concat = ["Hello", "world", "!"];
+        var result = "";
+        for (var add of concat) {
+            result = result + ' ' + add;
+        }
+        console.log(result);   //  Hello world !
+
+        //6.  Use a for...in loop to sum all numeric values in the object {x: 10, y: 20, z: 30}
+        var numeric = { x: 10, y: 20, z: 30 };
+        var addNumerics = 0;
+        for (var obj in numeric) {
+            addNumerics = addNumerics + numeric[obj];
+        }
+        console.log(addNumerics);     //60
+
+        //7.  Write a for loop to generate the first 7 numbers of the Fibonacci sequence.
+        var a = 0;
+        var b = 1;
+        var fibonacci = [a, b];
+
+        for (var i = 2; i < 7; i++) {
+            var c = a + b;
+            fibonacci.push(c);
+            a = b;
+            b = c;
+        }
+        console.log('The first 7 Fibonacci numbers are: ' + fibonacci.join(', '));   //The first 7 Fibonacci numbers are: 0, 1, 1, 2, 3, 5, 8
+
+        //8.  Use a for...of loop to find the maximum number in the array [3, 7, 2, 5, 6]
+        var maxNo = [3, 7, 2, 5, 6];
+        var max = maxNo[0];
+
+        for (var i = 1; i < maxNo.length; i++) {
+            if (maxNo[i] > max) {
+                max = maxNo[i];
+            }
+        }
+
+        console.log('The maximum number is: ' + max);   // The maximum number is: 7
+
+        //9.  Use a for...in loop to copy properties from {a: 1, b: 2} to a new object and print the new object
+        var copy = {
+            a: 1,
+            b: 2
+        }
+        var copy1 = {};
+        var merge = Object.assign(copy1, copy);
+        console.log(merge);
+
+        //10. Write a for loop to reverse the string “JavaScript”
+        var str = "JavaScript";
+        var revStr = '';
+
+        for (var i = str.length - 1; i >= 0; i--) {
+            revStr += str[i];
+        }
+
+        console.log('The reversed string is: ' + revStr);  //The reversed string is: tpircSavaJ
+
+        //11. Use a for...of loop to square each number in [1, 2, 3, 4] and sum them.
+        var square = [1, 2, 3, 4];
+        var s;
+        var sum = 0;
+        for (var sq of square) {
+            s = sq * sq;
+            sum = sum + s;
+        }
+        console.log('square each number sum is:' + ' ' + sum);  //square each number sum is: 30
+
+        //12. Use a for...in loop to count how many properties are in the object {name: "Alice", age: 25, country: "USA"}
+        var countObj = { name: "Alice", age: 25, country: "USA" };
+        var count = 0;
+        for (var key in countObj) {
+            count++;
+        }
+        console.log('The number of properties in countObj is: ' + count);  //The number of properties in countObj is: 3
+
+        //13.  Write a for loop to list all prime numbers between 1 and 30
+        for (var i = 2; i <= 30; i++) {
+            var isPrime = true;
+
+            for (var j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                console.log(i);   //2 3 5 7 11 13 17 19 23 29
+            }
+        }
+
+        // 14.  Use a for...of loop to aggregate strings in an array into a single sentence: ["Hello", "this", "is", "an", "array"].
+        var strArr = ["Hello", "this", "is", "an", "array"];
+        for (var str of strArr) {
+            var seperate = str.split(' ,').join(' ');
+            console.log(seperate);
+        }
+
+
+        //15.  Use a for...in loop to print all keys and values in the object {name: "Alice", age: 25, country: "USA"}
+        var obj = { name: "Alice", age: 25, country: "USA" };
+        for (var key in obj) {
+            console.log(key + ": " + obj[key]);
+        }
+
+        //16.  Write a for loop to count how many odd numbers are in the array [10, 21, 33, 42, 55, 66, 77]
+        var oddNo = [10, 21, 33, 42, 55, 66, 77];
+        var countOdd = 0;
+
+        for (var odd of oddNo) {
+            if (odd % 2 != 0) {
+                countOdd++;
+            }
+        }
+
+        console.log('The number of odd numbers in oddNo is: ' + countOdd);  //The number of odd numbers in oddNo is: 4
+    </script>
+
+</body>
+
+</html>
